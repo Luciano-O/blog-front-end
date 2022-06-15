@@ -1,0 +1,31 @@
+.LoginDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 10rem auto;
+  width: 20rem;
+  height: 15rem;
+  background: rgba( 255, 205, 205, 0.1 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 9px );
+  -webkit-backdrop-filter: blur( 9px );
+  border-radius: 10px;
+}
+
+.LoginDiv button{
+  margin: 0 auto;
+}
+
+.LoginDiv input{
+  width: 17rem;
+  height: 1.5rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+  margin: 0 1rem
+}
+
+.LoginDiv label{
+  margin-left: 0.5rem;
+}

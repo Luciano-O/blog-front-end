@@ -1,10 +1,29 @@
 const axios = require('axios');
 
 export const loginFetch = async (email, password) => {
-  const result = await fetch('http://localhost:3001/login', {
-    method: 'POST',
-    body: { email, password }
-  })
+  try{
+    const result = await axios.post('http://localhost:3030/login', {
+        email,
+        password,
+    })
+  
+    return result.data;
+  } catch(e) {
+    return e.response.data
+  }
+}
 
-  return result;
+export const loginRegister = async (displayName, email, password, image) => {
+  try{
+    const result = axios.post('http://localhost:3030/user', {
+      displayName,
+      email,
+      password,
+      image,
+    })
+
+    return result.data
+  } catch(e) {
+    return e.response.data
+  }
 }
