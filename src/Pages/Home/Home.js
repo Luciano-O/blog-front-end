@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
+import Header from '../Components/Header';
 
 function Home() {
   return(
-    <h1>Alo</h1>
+    <>
+      <Header />
+      <h1>Alo</h1>
+    </>
   )
 }
 
