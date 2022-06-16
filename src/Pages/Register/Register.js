@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { loginRegister } from '../../Services/Reqs';
+import { getMyUser, loginRegister } from '../../Services/Reqs';
 import BlogContext from '../../Context/BlogContext';
 import { useHistory } from 'react-router-dom';
 
@@ -11,7 +11,10 @@ function Register () {
   const [image, setImage ] = useState('');
   const [disabled, setDisabled ] = useState(true);
   const [registerError, setRegisterError] = useState();
-  const { setToken } = useContext(BlogContext);
+  const { setToken,
+    setUser,
+    setIsLogged,
+  } = useContext(BlogContext);
 
   useEffect(() => {
     const checkDisabled = () => {
@@ -23,8 +26,13 @@ function Register () {
 
   const handleClick = async () => {
     const result = await loginRegister(displayName, email, password, image);
-    if(result.message) setRegisterError(result.message);
+    console.log(result);
+    if(result.message) return setRegisterError(result.message);
+    const user = await getMyUser(result.token);
+    setUser(user);
+    setIsLogged(true);
     setToken(result.token);
+    history.push('/')
   }
 
   return (
@@ -53,6 +61,7 @@ function Register () {
       <button
         disabled={ disabled }
         onClick={ handleClick }
+        type="button"
       >
         Register
       </button>

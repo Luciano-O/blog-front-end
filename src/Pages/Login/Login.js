@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { useHistory } from 'react-router-dom';
 import BlogContext from '../../Context/BlogContext';
 import { Form, Button } from 'react-bootstrap'
-import { loginFetch } from '../../Services/Reqs';
+import { getMyUser, loginFetch } from '../../Services/Reqs';
 
 function Login()  {
   const history = useHistory();
@@ -11,7 +11,10 @@ function Login()  {
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
   const [invalidUser, setInvalidUser] = useState(false);
-  const { setToken } = useContext(BlogContext);
+  const { setToken,
+    setUser,
+    setIsLogged,
+  } = useContext(BlogContext);
 
   useEffect(() => {
     const checkValidate = () => {
@@ -26,6 +29,9 @@ function Login()  {
   const handleClick = async () => {
     const result = await loginFetch(email, password)
     if(result.message) return setInvalidUser(result.message);
+    const user = await getMyUser(result.token);
+    setUser(user);
+    setIsLogged(true);
     setToken(result.token)
     history.push('/')
   }
