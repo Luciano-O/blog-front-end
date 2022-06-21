@@ -7,7 +7,7 @@ function MainPost (props) {
     content,
   } = props;
   return (
-    <Card>
+    <Card className="text-center">
       <Card.Header>Featured</Card.Header>
       <Card.Body>
         <Card.Title>{ title }</Card.Title>

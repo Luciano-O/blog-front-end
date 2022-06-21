@@ -67,3 +67,16 @@ export const getRandomPosts = async () => {
     return e.response
   }
 }
+
+export const getCategoryPosts = async (id) => {
+  try{
+    const result = await axios({
+      method: 'GET',
+      url: `http://localhost:3030/categories/${id}`
+    })
+
+    return result.data.blogPost
+  } catch(e) {
+    return e.response
+  }
+}
