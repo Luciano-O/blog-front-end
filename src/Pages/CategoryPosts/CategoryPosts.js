@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../Components/Header/Header';
+import PostCard from '../../Components/PostCard/PostCard';
 import { getCategoryPosts } from '../../Services/Reqs';
 
 function CategoryPosts ({match}) {
@@ -17,6 +18,9 @@ function CategoryPosts ({match}) {
   return(
     <>
       <Header />
+      { posts.map(({title, content, user}) => (
+        <PostCard title={title} content={content} user={user} />
+      ))}
     </>
   )
 }
