@@ -1,0 +1,5 @@
+.nav {
+  margin: 0.5rem auto;
+  display: flex;
+  justify-content: space-around;
+}

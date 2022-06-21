@@ -1,0 +1,17 @@
+.header {
+  align-items: center;
+  margin-top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 0.2rem solid black;
+}
+
+.header img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.sides {
+  margin: 0 0.5rem;
+}

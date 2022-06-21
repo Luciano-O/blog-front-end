@@ -38,7 +38,32 @@ export const getMyUser = async (token) => {
 
     return result.data
   } catch(e) {
-    console.log(e.response);
+    return e.response
+  }
+}
+
+export const getCategories = async () => {
+  try{
+    const result = await axios({
+      method: 'GET',
+      url: 'http://localhost:3030/categories'
+    })
+
+    return result.data
+  } catch(e) {
+    return e.response
+  }
+}
+
+export const getRandomPosts = async () => {
+  try{
+    const result = await axios({
+      method: 'GET',
+      url: 'http://localhost:3030/post/random'
+    })
+
+    return result.data
+  } catch(e) {
     return e.response
   }
 }
