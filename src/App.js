@@ -5,6 +5,7 @@ import Home from "./Pages/Home/Home";
 import Login from './Pages/Login/Login';
 import Register from "./Pages/Register/Register";
 import CategoryPosts from "./Pages/CategoryPosts/CategoryPosts";
+import NewPost from "./Pages/NewPost/NewPost";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/login" component={ Login } />
       <Route exact path="/register" component={ Register } />
       <Route exact path="/categoryposts/:id" component={ CategoryPosts }/>
+      <Route exact path="/newpost" component={ NewPost }/>
     </Switch>
   );
 }

@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(109 68 68 / 23%);
+}
+
+.footer span {
+  color: rgb(33,37,41);
+}
+
+.body {
+  background-color: rgb(33,37,41);
+}
+
+.body div, .body p {
+  color: rgb(255,255,255);
+}
+
+.header {
+  background-color: rgb(109 68 68 / 23%);
+}

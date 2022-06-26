@@ -3,3 +3,30 @@
   display: flex;
   justify-content: space-around;
 }
+
+.category {
+  color: rgb(92, 90, 90);
+}
+
+.category:hover {
+  color: black;
+}
+
+main {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.secPosts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1%;
+}
+
+.secPost {
+  width: 49.5%;
+}
+
+.mainPost {
+  width: 100%;
+}

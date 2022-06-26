@@ -13,13 +13,13 @@ function CategoryPosts ({match}) {
       setPosts(posts)
     }
     getPosts();
-  }, [])
+  }, [id])
 
   return(
     <>
       <Header />
-      { posts.map(({title, content, user}) => (
-        <PostCard title={title} content={content} user={user} />
+      { posts.map(({id, title, content, user}) => (
+        <PostCard key={id} title={title} content={content} user={user} />
       ))}
     </>
   )

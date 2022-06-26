@@ -80,3 +80,16 @@ export const getCategoryPosts = async (id) => {
     return e.response
   }
 }
+
+export const createPost = async (token, title, content, categoryIds) => {
+  try{
+    await axios({
+      method: 'POST',
+      url: 'http://localhost:3030/post',
+      headers: { Authorization: token },
+      data: { title, content, categoryIds }
+    })
+  } catch(e) {
+    console.log(e.response)
+  }
+}

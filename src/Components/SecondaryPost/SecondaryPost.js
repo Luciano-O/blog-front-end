@@ -5,10 +5,11 @@ function SecondaryPost (props) {
   const {
     title,
     content,
+    className,
   } = props;
 
   return (
-    <Card>
+    <Card className={className}>
       <Card.Body>
         <Card.Title>{ title }</Card.Title>
         <Card.Text>{ content }</Card.Text>

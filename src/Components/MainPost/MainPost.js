@@ -1,20 +1,25 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import styles from './styles.module.css';
 
 function MainPost (props) {
   const {
     title,
     content,
+    className,
+    user,
+    categories,
   } = props;
   return (
-    <Card className="text-center">
-      <Card.Header>Featured</Card.Header>
-      <Card.Body>
+    <Card className={`text-center ${className}`}>
+      <Card.Header className={styles.header}>{user && user.displayName}</Card.Header>
+      <Card.Body className={styles.body}>
         <Card.Title>{ title }</Card.Title>
         <Card.Text>{ content }</Card.Text>
-        <Button variant="outline-primary">Primary</Button>{' '}
       </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className={`text-muted ${styles.footer}`}>
+        {categories && categories.map(({name, id}) => <span key={id}>{name}</span>)}
+      </Card.Footer>
     </Card>
   )
 }
