@@ -44,7 +44,9 @@ function Header() {
           onChange={({target}) => setSearch(target.value)}
           aria-label="Search"
         />
-        <Link><img className={styles.searchImg} src={searchImg} alt="search"/></Link>
+        <Link to={`/search/${search}`}>
+          <img className={styles.searchImg} src={searchImg} alt="search"/>
+        </Link>
         {isLogged
         ? <p>{user.displayName}</p>
         : <Button 

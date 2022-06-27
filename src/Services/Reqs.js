@@ -93,3 +93,29 @@ export const createPost = async (token, title, content, categoryIds) => {
     console.log(e.response)
   }
 }
+
+export const getByQuery = async (query) => {
+  try{
+    const result = await axios({
+      method: 'GET',
+      url: `http://localhost:3030/post/search?q=${query}`,
+    })
+
+    return result.data
+  } catch(e) {
+    console.log(e.response)
+  }
+}
+
+export const getAllPosts = async () => {
+  try{
+    const result = await axios({
+      method: 'GET',
+      url: `http://localhost:3030/post`,
+    })
+
+    return result.data
+  } catch(e) {
+    console.log(e.response)
+  }
+}

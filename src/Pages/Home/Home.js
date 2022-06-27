@@ -57,8 +57,20 @@ function Home() {
           user={mainPost.user}
         />
         <div className={styles.secPosts}>
-          <SecondaryPost className={styles.secPost} title={ secPost.title } content={ secPost.content } />
-          <SecondaryPost className={styles.secPost} title={ secPost2.title } content={ secPost2.content } />
+          <SecondaryPost 
+            className={styles.secPost}
+            title={ secPost.title }
+            content={ secPost.content }
+            user={secPost.user}
+            categories={secPost.categories}
+          />
+          <SecondaryPost 
+            className={styles.secPost}
+            title={ secPost2.title }
+            content={ secPost2.content }
+            user={secPost2.user}
+            categories={secPost2.categories}
+          />
         </div>
       </main>
       <Button 
