@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
 import MainPost from '../../Components/MainPost/MainPost';
 import SecondaryPost from '../../Components/SecondaryPost/SecondaryPost';
 import BlogContext from '../../Context/BlogContext';
-import { getCategories, getRandomPosts } from '../../Services/Reqs';
+import { getCategories, getRandomPosts } from '../../Utils/Reqs';
 import styles from './styles.module.css';
 import Footer from '../../Components/Footer/Footer';
 

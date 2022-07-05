@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Header from '../../Components/Header/Header';
 import PostCard from '../../Components/PostCard/PostCard';
-import { getAllPosts, getByQuery } from '../../Services/Reqs';
+import { getAllPosts, getByQuery } from '../../Utils/Reqs';
 import styles from './styles.module.css';
 
 function Search ({match}) {

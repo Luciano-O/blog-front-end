@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { useHistory } from 'react-router-dom';
 import BlogContext from '../../Context/BlogContext';
 import { Form, Button } from 'react-bootstrap'
-import { getMyUser, loginFetch } from '../../Services/Reqs';
+import { getMyUser, loginFetch } from '../../Utils/Reqs';
 
 function Login()  {
   const history = useHistory();

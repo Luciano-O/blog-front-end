@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../Components/Header/Header';
 import PostCard from '../../Components/PostCard/PostCard';
-import { getCategoryPosts } from '../../Services/Reqs';
+import { getCategoryPosts } from '../../Utils/Reqs';
 
 function CategoryPosts ({match}) {
   const { id } = match.params

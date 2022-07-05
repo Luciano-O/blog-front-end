@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { getMyUser, loginRegister } from '../../Services/Reqs';
+import { getMyUser, loginRegister } from '../../Utils/Reqs';
 import BlogContext from '../../Context/BlogContext';
 import { useHistory } from 'react-router-dom';
 

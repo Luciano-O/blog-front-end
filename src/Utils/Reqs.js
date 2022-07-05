@@ -2,7 +2,7 @@ const axios = require('axios');
 
 export const loginFetch = async (email, password) => {
   try{
-    const result = await axios.post('http://localhost:3030/login', {
+    const result = await axios.post(`${'http://localhost:3000'}/login`, {
         email,
         password,
     })
@@ -15,7 +15,8 @@ export const loginFetch = async (email, password) => {
 
 export const loginRegister = async (displayName, email, password, image) => {
   try{
-    const result = await axios.post('http://localhost:3030/user', {
+    const result = await axios.post(`${'http://localhost:3000'}/user`,
+    {
       displayName,
       email,
       password,
@@ -33,7 +34,7 @@ export const getMyUser = async (token) => {
     const result = await axios({
       method: 'GET',
       headers: {Authorization: token},
-      url: 'http://localhost:3030/user/me'
+      url: `${'http://localhost:3000'}/user/me`
     })
 
     return result.data
@@ -46,7 +47,7 @@ export const getCategories = async () => {
   try{
     const result = await axios({
       method: 'GET',
-      url: 'http://localhost:3030/categories'
+      url: `${'http://localhost:3000'}/categories`
     })
 
     return result.data
@@ -59,7 +60,7 @@ export const getRandomPosts = async () => {
   try{
     const result = await axios({
       method: 'GET',
-      url: 'http://localhost:3030/post/random'
+      url: `${'http://localhost:3000'}/post/random`
     })
 
     return result.data
@@ -72,7 +73,7 @@ export const getCategoryPosts = async (id) => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `http://localhost:3030/categories/${id}`
+      url: `${'http://localhost:3000'}/categories/${id}`
     })
 
     return result.data.blogPost
@@ -85,7 +86,7 @@ export const createPost = async (token, title, content, categoryIds) => {
   try{
     await axios({
       method: 'POST',
-      url: 'http://localhost:3030/post',
+      url: `${'http://localhost:3000'}/post`,
       headers: { Authorization: token },
       data: { title, content, categoryIds }
     })
@@ -98,7 +99,7 @@ export const getByQuery = async (query) => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `http://localhost:3030/post/search?q=${query}`,
+      url: `${'http://localhost:3000'}/post/search?q=${query}`,
     })
 
     return result.data
@@ -111,7 +112,7 @@ export const getAllPosts = async () => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `http://localhost:3030/post`,
+      url: `${'http://localhost:3000'}/post`
     })
 
     return result.data

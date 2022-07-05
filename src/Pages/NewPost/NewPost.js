@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect} from 'react'
 import { Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import BlogContext from '../../Context/BlogContext';
-import { createPost, getCategories } from '../../Services/Reqs';
+import { createPost, getCategories } from '../../Utils/Reqs';
 
 function NewPost () {
   const { token } = useContext(BlogContext);
