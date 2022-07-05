@@ -1,8 +1,11 @@
 const axios = require('axios');
+import env from 'react-dotenv';
+
+const { API_URL } = env
 
 export const loginFetch = async (email, password) => {
   try{
-    const result = await axios.post(`${'http://localhost:3000'}/login`, {
+    const result = await axios.post(`${API_URL}/login`, {
         email,
         password,
     })
@@ -15,7 +18,7 @@ export const loginFetch = async (email, password) => {
 
 export const loginRegister = async (displayName, email, password, image) => {
   try{
-    const result = await axios.post(`${'http://localhost:3000'}/user`,
+    const result = await axios.post(`${API_URL}/user`,
     {
       displayName,
       email,
@@ -34,7 +37,7 @@ export const getMyUser = async (token) => {
     const result = await axios({
       method: 'GET',
       headers: {Authorization: token},
-      url: `${'http://localhost:3000'}/user/me`
+      url: `${API_URL}/user/me`
     })
 
     return result.data
@@ -47,7 +50,7 @@ export const getCategories = async () => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `${'http://localhost:3000'}/categories`
+      url: `${API_URL}/categories`
     })
 
     return result.data
@@ -60,7 +63,7 @@ export const getRandomPosts = async () => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `${'http://localhost:3000'}/post/random`
+      url: `${API_URL}/post/random`
     })
 
     return result.data
@@ -73,7 +76,7 @@ export const getCategoryPosts = async (id) => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `${'http://localhost:3000'}/categories/${id}`
+      url: `${API_URL}/categories/${id}`
     })
 
     return result.data.blogPost
@@ -86,7 +89,7 @@ export const createPost = async (token, title, content, categoryIds) => {
   try{
     await axios({
       method: 'POST',
-      url: `${'http://localhost:3000'}/post`,
+      url: `${API_URL}/post`,
       headers: { Authorization: token },
       data: { title, content, categoryIds }
     })
@@ -99,7 +102,7 @@ export const getByQuery = async (query) => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `${'http://localhost:3000'}/post/search?q=${query}`,
+      url: `${API_URL}/post/search?q=${query}`,
     })
 
     return result.data
@@ -112,7 +115,7 @@ export const getAllPosts = async () => {
   try{
     const result = await axios({
       method: 'GET',
-      url: `${'http://localhost:3000'}/post`
+      url: `${API_URL}/post`
     })
 
     return result.data
