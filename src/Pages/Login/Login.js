@@ -41,7 +41,7 @@ function Login()  {
       {invalidUser && invalidUser}
         <Form.Control
           type="email"
-          className={styles.inputLogin}
+          className={styles.inputEmail}
           value={ email }
           placeholder="Enter email"
           onChange={({target}) => setEmail(target.value)}
