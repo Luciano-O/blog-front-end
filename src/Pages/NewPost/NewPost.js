@@ -14,18 +14,18 @@ function NewPost () {
 
   useEffect(() => {
     const bringCategories = async () => {
-      const categories = await getCategories();
-      setCategories(categories);
+      const finalCategories = await getCategories();
+      setCategories(finalCategories);
     }
     bringCategories();
   }, [])
 
   const handleSelectChange = ({target}) => {
-    if(selectedCategories.includes(parseInt(target.value))){
-      const finalArr = selectedCategories.filter((item) => item !== parseInt(target.value))
+    if(selectedCategories.includes(parseInt(target.value, 10))){
+      const finalArr = selectedCategories.filter((item) => item !== parseInt(target.value, 10))
       setSelectedCategories(finalArr);
     } else {
-      const finalArr = [...selectedCategories, parseInt(target.value)]
+      const finalArr = [...selectedCategories, parseInt(target.value, 10)]
       setSelectedCategories(finalArr);
     }
   }

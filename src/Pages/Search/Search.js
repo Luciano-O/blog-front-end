@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import propTypes from 'prop-types';
 import Header from '../../Components/Header/Header';
 import PostCard from '../../Components/PostCard/PostCard';
 import { getAllPosts, getByQuery } from '../../Utils/Reqs';
@@ -37,6 +38,14 @@ function Search ({match}) {
       </main>
     </>
   )
+}
+
+Search.propTypes = {
+  match: propTypes.shape({
+    params: propTypes.shape({
+      query: propTypes.string
+    }).isRequired
+  }).isRequired
 }
 
 export default Search;

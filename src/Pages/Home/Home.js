@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { Button, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
 import MainPost from '../../Components/MainPost/MainPost';
 import SecondaryPost from '../../Components/SecondaryPost/SecondaryPost';
@@ -21,8 +20,8 @@ function Home() {
 
   useEffect(() => {
     const bringCategories = async () => {
-      const categories = await getCategories();
-      setCategories(categories);
+      const finalCategories = await getCategories();
+      setCategories(finalCategories);
     };
     const bringPosts = async () => {
       const posts = await getRandomPosts();
@@ -37,7 +36,7 @@ function Home() {
   useEffect(() => {
     const testLogged = () => {
       if(isLogged) return setBtnDisable(false)
-      setBtnDisable(true)
+      return setBtnDisable(true)
     };
     testLogged();
   }, [isLogged])

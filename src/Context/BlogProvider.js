@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import propTypes from 'prop-types';
 import BlogContext from './BlogContext';
 
 function BlogProvider({ children }) {
@@ -20,6 +21,10 @@ function BlogProvider({ children }) {
       {children}
     </BlogContext.Provider>
   );
+}
+
+BlogProvider.propTypes = {
+  children: propTypes.shape({}).isRequired
 }
 
 export default BlogProvider;

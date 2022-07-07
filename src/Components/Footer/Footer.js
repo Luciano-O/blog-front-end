@@ -9,7 +9,7 @@ function Footer () {
   return (
     <footer>
       <p>Back-end e Front-end feitos por <a target="blank" href="https://www.linkedin.com/in/lucianoog">Luciano Oliveira</a></p>
-      <p className={styles.top} onClick={handleClick}>Voltar ao topo</p>
+      <button type='button' className={styles.top} onClick={handleClick}>Voltar ao topo</button>
     </footer>
   )
 }

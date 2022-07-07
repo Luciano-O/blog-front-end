@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { getMyUser, loginRegister } from '../../Utils/Reqs';
 import BlogContext from '../../Context/BlogContext';
-import { useHistory } from 'react-router-dom';
 
 function Register () {
   const history = useHistory();
@@ -26,13 +26,12 @@ function Register () {
 
   const handleClick = async () => {
     const result = await loginRegister(displayName, email, password, image);
-    console.log(result);
     if(result.message) return setRegisterError(result.message);
     const user = await getMyUser(result.token);
     setUser(user);
     setIsLogged(true);
     setToken(result.token);
-    history.push('/')
+    return history.push('/')
   }
 
   return (

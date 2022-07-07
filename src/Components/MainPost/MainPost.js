@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 import styles from './styles.module.css';
 
@@ -22,6 +23,14 @@ function MainPost (props) {
       </Card.Footer>
     </Card>
   )
+}
+
+MainPost.propTypes = {
+    title: propTypes.string.isRequired,
+    content: propTypes.string.isRequired,
+    className: propTypes.string.isRequired,
+    user: propTypes.string.isRequired,
+    categories: propTypes.string.isRequired,
 }
 
 export default MainPost;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import styles from './styles.module.css';
 import { useHistory } from 'react-router-dom';
-import BlogContext from '../../Context/BlogContext';
 import { Form, Button } from 'react-bootstrap'
+import styles from './styles.module.css';
+import BlogContext from '../../Context/BlogContext';
 import { getMyUser, loginFetch } from '../../Utils/Reqs';
 
 function Login()  {
@@ -33,7 +33,7 @@ function Login()  {
     setUser(user);
     setIsLogged(true);
     setToken(result.token)
-    history.push('/')
+    return history.push('/')
   }
 
   return (

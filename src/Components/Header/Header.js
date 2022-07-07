@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import styles from './styles.module.css';
 import { Link, useHistory } from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
+import styles from './styles.module.css';
 import house from '../../images/house-fill.svg'
 import searchImg from '../../images/search.svg'
 import BlogContext from '../../Context/BlogContext';
-import { Button, Form } from 'react-bootstrap';
 
 function Header() {
   const {
@@ -33,7 +33,7 @@ function Header() {
         : <Link className={styles.register} to="/register">Register</Link>}
       </div>
 
-      <Link to="/"><img className={styles.home} src={house} alt={ 'Home' }/></Link>
+      <Link to="/"><img className={styles.home} src={house} alt='Home'/></Link>
       <div className={styles.right}>
         <Form.Control
           type="search"

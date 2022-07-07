@@ -1,5 +1,6 @@
-const axios = require('axios');
 import env from 'react-dotenv';
+
+const axios = require('axios');
 
 const { API_URL } = env
 
@@ -87,14 +88,14 @@ export const getCategoryPosts = async (id) => {
 
 export const createPost = async (token, title, content, categoryIds) => {
   try{
-    await axios({
+    return await axios({
       method: 'POST',
       url: `${API_URL}/post`,
       headers: { Authorization: token },
       data: { title, content, categoryIds }
     })
   } catch(e) {
-    console.log(e.response)
+    return(e.response)
   }
 }
 
@@ -107,7 +108,7 @@ export const getByQuery = async (query) => {
 
     return result.data
   } catch(e) {
-    console.log(e.response)
+    return(e.response)
   }
 }
 
@@ -120,6 +121,6 @@ export const getAllPosts = async () => {
 
     return result.data
   } catch(e) {
-    console.log(e.response)
+    return(e.response)
   }
 }
