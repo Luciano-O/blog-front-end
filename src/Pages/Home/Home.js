@@ -42,7 +42,7 @@ function Home() {
   }, [isLogged])
 
   return(
-    <>
+    <div className={styles.homePage}>
       <Header />
       <nav className={ styles.nav }>
         {categories && categories
@@ -78,14 +78,15 @@ function Home() {
           </Row>
       </main>
       <Button 
-        variant="outline-primary"
+        variant="outline-dark"
         onClick={() => history.push('/newpost')}
         disabled={btnDisable}
+        className={styles.createBtn}
       >
-        Primary
-      </Button>{' '}
+        Create Post
+      </Button>
       <Footer />
-    </>
+    </div>
   )
 }
 

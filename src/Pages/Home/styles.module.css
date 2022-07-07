@@ -1,5 +1,5 @@
 .nav {
-  margin: 0.5rem auto;
+  margin: 0.5rem 0;
   display: flex;
   justify-content: space-around;
 }
@@ -25,4 +25,14 @@ main {
 
 .mainPost {
   width: 100%;
+}
+
+.createBtn {
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.homePage {
+  display: flex;
+  flex-direction: column;
 }
