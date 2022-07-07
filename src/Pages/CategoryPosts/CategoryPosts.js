@@ -9,8 +9,9 @@ function CategoryPosts ({match}) {
 
   useEffect(() => {
     const getPosts = async () => {
-      const posts = await getCategoryPosts(id)
-      setPosts(posts)
+      const posts = await getCategoryPosts(id);
+      console.log(posts);
+      setPosts(posts);
     }
     getPosts();
   }, [id])
