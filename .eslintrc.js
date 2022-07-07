@@ -20,6 +20,7 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": "off",
-    "react/jsx-no-constructed-context-values": "off"
+    "react/jsx-no-constructed-context-values": "off",
+    "react/no-unescaped-entities": "off"
   },
 };

@@ -57,7 +57,7 @@ function Home() {
           user={mainPost.user}
         />
           <Row>
-            <Col>
+            <Col className={styles.col}>
               <SecondaryPost 
                 className={styles.secPost}
                 title={ secPost.title }
@@ -66,7 +66,7 @@ function Home() {
                 categories={secPost.categories}
               />
             </Col>
-            <Col>
+            <Col className={styles.col}>
               <SecondaryPost 
                 className={styles.secPost}
                 title={ secPost2.title }

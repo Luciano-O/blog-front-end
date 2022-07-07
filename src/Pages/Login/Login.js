@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap'
 import styles from './styles.module.css';
 import BlogContext from '../../Context/BlogContext';
@@ -37,27 +37,22 @@ function Login()  {
   }
 
   return (
-    <form className={ styles.LoginDiv }>
+    <Form className={ styles.LoginDiv }>
       {invalidUser && invalidUser}
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label><br/>
         <Form.Control
-          type="email"  
+          type="email"
+          className={styles.inputLogin}
           value={ email }
           placeholder="Enter email"
           onChange={({target}) => setEmail(target.value)}
         />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label><br/>
         <Form.Control 
-          type="password" 
+          type="password"
+          className={styles.inputLogin}
           value={ password }
           placeholder="Password"
           onChange={({target}) => setPassword(target.value)}
         />
-      </Form.Group>
       <Button 
         variant="primary"
         disabled={ disabled }
@@ -66,7 +61,8 @@ function Login()  {
       >
         Log in
       </Button>
-    </form>
+      <span>Don't have an account? <Link to="/register">Register</Link></span>
+    </Form>
   )
 
 }
