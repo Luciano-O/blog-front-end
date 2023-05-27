@@ -1,3 +1,3 @@
 window.env = {
-  "API_URL": "https://luciano-blog-backend.herokuapp.com"
+  "API_URL": "http://18.231.1.209:3001"
 };
